@@ -233,7 +233,7 @@ async function sendMessage(type, ip, add_data = "") {
 			msg = `${type}\nIP: ${ip}\n<tg-spoiler>${add_data}`;
 		}
 
-		const url = `https://api.telegram.org/bot${BotToken}/sendMessage?chat_id=${ChatID}&parse_mode=HTML&text=${encodeURIComponent(msg)}`;
+		const url = `https://api.telegram.org/bot${BotToken}/sendMessage?chat_id=${ChatID}&parse_mode=HTML&disable_web_page_preview=true&text=${encodeURIComponent(msg)}`;
 		return fetch(url, {
 			method: 'GET',
 			headers: {
@@ -1461,3 +1461,4 @@ export default {
 		}
 	}
 };
+
